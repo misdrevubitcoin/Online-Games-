@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Game Player</title>
+    <link href="https://fonts.cdnfonts.com/css/venite-adoremus" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Venite Adoremus', sans-serif;
+            background-color: #20232a;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #61dafb;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #20232a;
+        }
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .game-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .game-card {
+            background-color: #282c34;
+            border: 1px solid #61dafb;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .game-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .game-card h3 {
+            margin: 10px 0 0;
+            font-size: 1.2rem;
+            color: #61dafb;
+        }
+        iframe {
+            border: 2px solid #61dafb;
+            border-radius: 8px;
+            width: 100%;
+            height: 80vh;
+            display: none; /* Hide the iframe initially */
+        }
+    </style>
+</head>
+<body>
+    <header>Online Game Player</header>
+    <div class="game-container">
+        <div class="game-list">
+            <!-- Game Card for Slope 3 -->
+            <div class="game-card" onclick="loadGame('https://slope3.com/')">
+                <img src="https://webecomewhatwebehold.io/data/image/game/slope-game.png" alt="Slope 3">
+                <h3>Slope 3</h3>
+            </div>
+            <!-- Game Card for Block Blast -->
+            <div class="game-card" onclick="loadGame('https://reunbozdo.github.io/')">
+                <img src="https://m.media-amazon.com/images/I/71mDg3UjuqL.png" alt="Block Blast">
+                <h3>Block Blast</h3>
+            </div>
+            <!-- Game Card for FNAF -->
+            <div class="game-card" onclick="loadGame('https://wellsousaaa.github.io/Five-Nights-at-Freddys-Web/')">
+                <img src="https://static.wikia.nocookie.net/freddy-fazbears-pizza/images/c/cb/FNaF1-MobileIcon.png/revision/latest?cb=20240329171625" alt="Game 1">
+                <h3>FNAF
+            </div>
+            <!-- Game Card for FNAF 2 -->
+            <div class="game-card" onclick="loadGame('https://ruihq.github.io/FNAF2/')">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d722924b-ddc1-4421-b215-e7b176a97c9f/deuzgvp-23cece3d-b6d8-4636-b1a1-29d076e4ad54.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q3MjI5MjRiLWRkYzEtNDQyMS1iMjE1LWU3YjE3NmE5N2M5ZlwvZGV1emd2cC0yM2NlY2UzZC1iNmQ4LTQ2MzYtYjFhMS0yOWQwNzZlNGFkNTQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.afn-e2xL2WGlN4Xk_fEnemKW2g3r0DVZITPNt5mbnls" alt="Game 2">
+                <h3>FNAF 2</h3>
+            </div>
+        
+            </div>
+        </div>
+        <!-- Game Viewer -->
+        <iframe id="game-viewer" src="" title="Game Viewer"></iframe>
+    </div>
+
+    <script>
+        function loadGame(url) {
+            const iframe = document.getElementById('game-viewer');
+            iframe.src = url;       // Set the iframe source to the game's URL
+            iframe.style.display = 'block'; // Make the iframe visible
+        }
+    </script>
+</body>
+</html>
